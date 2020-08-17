@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.alert import Alert
 import time
+import os
 
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
@@ -13,11 +14,8 @@ driver.get('https://portal.student.kit.ac.jp/ead/?c=class_evaluation_list')
 
 #ログイン処理
 if driver.current_url[:27] == 'https://auth.cis.kit.ac.jp/':
-    print("id:")
-    id = input()
-    print("password:")
-    password = input()
-
+    id = os.getenv('id')
+    password = os.getenv('password')
     driver.find_element_by_id('username').send_keys(id)
     driver.find_element_by_id('password').send_keys(password)
     driver.find_element_by_tag_name('button').click()
