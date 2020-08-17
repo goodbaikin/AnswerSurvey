@@ -17,4 +17,4 @@ RUN cd /opt/chrome/ && \
     unzip chromedriver_linux64.zip
 
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/chrome
-RUN python main.py
+ENTRYPOINT ["python","main.py"]
