@@ -9,7 +9,7 @@ options.add_argument('--diable-gpu')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 
-driver = webdriver.Chrome(executable_path='/opt/chrome/chromedriver', options=options)
+driver = webdriver.Chrome(options=options)
 driver.get('https://portal.student.kit.ac.jp/ead/?c=class_evaluation_list')
 
 #ログイン処理
